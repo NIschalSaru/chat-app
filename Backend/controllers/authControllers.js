@@ -57,7 +57,7 @@ export const signup = async (req, res) => {
 
 export const login = async (req, res) => {
   try {
-    const { password, username } = req.body;
+    const { username, password } = req.body;
 
     const user = await User.findOne({ username });
     const isPasswordCorrect = await bcrypt.compare(
@@ -66,7 +66,7 @@ export const login = async (req, res) => {
     );
 
     if (!user || !isPasswordCorrect) {
-      return res.status(401).json({ message: "Invalid username or password" });
+      return res.status(400).json({ error: "Invalid username or password" });
     }
 
     const payload = {
@@ -76,7 +76,10 @@ export const login = async (req, res) => {
     const token = generateAccessToken(payload, res);
 
     return res.status(200).json({
-      Token: token,
+      _id: user._id,
+      fullName: user.fullName,
+      username: user.username,
+      profilePic: user.profilePic,
       message: "Login successful",
     });
   } catch (error) {

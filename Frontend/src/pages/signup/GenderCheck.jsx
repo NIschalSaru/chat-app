@@ -1,19 +1,37 @@
 import React from "react";
 
-function GenderCheck() {
+function GenderCheck({ onChangeCheckBox, selectedgender }) {
   return (
     <div className="flex">
       <div className="form-control">
-        <label className={`label gap-2 cursor-pointer`}>
+        <label
+          className={`label gap-2 cursor-pointer ${
+            selectedgender == "male" ? "selected" : ""
+          }`}
+        >
           <span className="label-text text-blue-300">Male</span>
-          <input type="checkbox" className="checkbox checkbox-success" />
+          <input
+            type="checkbox"
+            className="checkbox checkbox-success"
+            checked={selectedgender === "male"}
+            onChange={() => onChangeCheckBox("male")}
+          />
         </label>
       </div>
 
       <div className="form-control">
-        <label className={`label gap-2 cursor-pointer`}>
+        <label
+          className={`label gap-2 cursor-pointer ${
+            selectedgender == "female" ? "selected" : ""
+          }`}
+        >
           <span className="label-text text-blue-300">Female</span>
-          <input type="checkbox" className="checkbox checkbox-success" />
+          <input
+            type="checkbox"
+            className="checkbox checkbox-success"
+            checked={selectedgender === "female"}
+            onChange={() => onChangeCheckBox("female")}
+          />
         </label>
       </div>
     </div>
