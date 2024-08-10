@@ -112,8 +112,8 @@ const SignUp = () => {
 
           <div>
             <button
-              className={`input input-bordered h-10 btn-block glass text-white ${
-                loading ? "" : "hover:bg-slate-600"
+              className={`input border-cyan-100 h-10 btn-block backdrop-blur-lg bg-opacity-0 text-white ${
+                loading ? "" : "hover:glass"
               }`}
               style={{
                 backgroundColor: loading ? "rgba(0, 0, 0, 0.5)" : "", //

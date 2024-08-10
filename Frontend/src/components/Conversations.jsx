@@ -8,12 +8,14 @@ const Conversations = () => {
   return (
     <div className="py-2 flex flex-col overflow-auto">
       {conversation.map((user, idx) => {
-        <Conversation
-          key={user._id}
-          user={user}
-          emoji={getRandomEmoji()}
-          lastIdx={idx === conversation.length - 1}
-        />;
+        return (
+          <Conversation
+            key={user._id}
+            user={user}
+            emoji={getRandomEmoji()}
+            lastIdx={idx === conversation.length - 1}
+          />
+        );
       })}
       {loading ? <span className="loading loading-spinner text-white" /> : null}
     </div>
