@@ -46,18 +46,17 @@ export const getMessage = async (req, res) => {
   try {
     const { id: userToChatId } = req.params;
     const senderId = req.user.id;
-
     const conversation = await Conversation.findOne({
       participants: { $all: [senderId, userToChatId] },
     }).populate("messages"); // instead of returning messages data array, it returns each populated message objects
 
-    if (!conversation)
+    if (!conversation) {
       return res.status(404).json({ message: "Conversation not found" });
+    }
 
     const messages = conversation.messages;
     res.status(200).json(messages);
   } catch ($e) {
-    console.log(error);
     res.status(500).json({ message: "Internal Server Error" });
   }
 };

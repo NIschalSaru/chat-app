@@ -18,16 +18,26 @@ const MessageContainer = () => {
         <NoChatSelected />
       ) : (
         <>
-          <div className="bg-slate-500 px-4 py-2 mb-2">
-            <span className="label-text">To:</span>
-            {""}
-            <span className="text-gray-900 font-bold">
-              {selectedConversation.fullName}
-            </span>
-          </div>
+          <div className="flex flex-col h-full">
+            <div className="glass px-4 py-2 mb-2 flex items-center">
+              <img
+                className="w-8 h-8 mr-2"
+                src={selectedConversation.profilePic}
+                alt="user avatar"
+              />
+              <p className="font-thin text-gray-200 no-select">
+                {selectedConversation.fullName}
+              </p>
+            </div>
 
-          <Messages />
-          <MessageInput />
+            <div className="flex-1 overflow-auto">
+              <Messages />
+            </div>
+
+            <div className="mt-2">
+              <MessageInput />
+            </div>
+          </div>
         </>
       )}
     </div>
