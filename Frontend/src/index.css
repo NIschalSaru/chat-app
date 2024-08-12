@@ -45,9 +45,29 @@ dark mode looking scrollbar ::-webkit-scrollbar {
 }
 
 @keyframes loading {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 0%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
 }
+
+.relative {
+  position: relative;
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0; /* Positions the indicator at the bottom-right of the avatar */
+  width: 8px;
+  height: 8px;
+  background-color: green; /* Color of the indicator */
+  border-radius: 50%; /* Makes it a circle */
+  border: 1px solid white; /* Optional: Adds a white border to the circle */
+}
+
 /* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
 /* .shake {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;

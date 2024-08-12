@@ -1,5 +1,6 @@
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
+import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
   try {
@@ -24,17 +25,22 @@ export const sendMessage = async (req, res) => {
     });
 
     if (newMessage) {
-      conversation.messages.push(newMessage.id);
+      conversation.messages.push(newMessage._id);
     }
-
-    //SOCKET.IO FUNCTIONALITY FOR REAL-TIME CHAT
-
     //this will not run in parallel
     // await conversation.save();
     // await newMessage.save();
 
     // this will run in parallel
     await Promise.all([newMessage.save(), conversation.save()]);
+
+    //SOCKET.IO FUNCTIONALITY FOR REAL-TIME CHAT
+    const receiverSocketId = getReceiverSocketId(receiverId); //get receiver's socketId from userSocketMap of socket.js
+    if (receiverSocketId) {
+      //io.to(receiverSocketId).emit("newMessage", newMessage); // used to send events to specific client
+      io.to(receiverSocketId).emit("newMessage", newMessage);
+    }
+
     res.status(201).json(newMessage);
   } catch (error) {
     console.log(error);
