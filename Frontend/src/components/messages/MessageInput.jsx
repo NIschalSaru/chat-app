@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoIosSend } from "react-icons/io";
+import { LuSendHorizonal } from "react-icons/lu";
 import useSendMessage from "../../hooks/useSendMessage";
 
 const MessageInput = () => {
@@ -32,7 +32,7 @@ const MessageInput = () => {
             {loading ? (
               <div className="loading loading-spinner"></div>
             ) : (
-              <IoIosSend className="text-white h-6 w-6" />
+              <LuSendHorizonal className="text-gray-500 h-9 w-9" />
             )}
           </button>
         </div>

@@ -26,7 +26,7 @@ const MessageContainer = () => {
                 src={selectedConversation.profilePic}
                 alt="user avatar"
               />
-              <p className="font-thin text-gray-200 no-select">
+              <p className="font-thin text-black no-select">
                 {selectedConversation.fullName}
               </p>
             </div>

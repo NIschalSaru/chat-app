@@ -9,7 +9,7 @@ function GenderCheck({ onChangeCheckBox, selectedgender }) {
             selectedgender == "male" ? "selected" : ""
           }`}
         >
-          <span className="label-text text-blue-300">Male</span>
+          <span className="label-text text-black">Male</span>
           <input
             type="checkbox"
             className="checkbox checkbox-success"
@@ -25,7 +25,7 @@ function GenderCheck({ onChangeCheckBox, selectedgender }) {
             selectedgender == "female" ? "selected" : ""
           }`}
         >
-          <span className="label-text text-blue-300">Female</span>
+          <span className="label-text text-black">Female</span>
           <input
             type="checkbox"
             className="checkbox checkbox-success"

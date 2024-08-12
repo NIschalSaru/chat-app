@@ -22,9 +22,7 @@ function Login() {
         <form onSubmit={handleOnSubmit}>
           <div>
             <label className="label p-2">
-              <span className="text-base  text-blue-300 label-text">
-                Username
-              </span>
+              <span className="text-base  text-black label-text">Username</span>
             </label>
             <input
               type="text"
@@ -37,9 +35,7 @@ function Login() {
 
           <div>
             <label className="label p-2">
-              <span className="text-base  text-blue-300 label-text">
-                Password
-              </span>
+              <span className="text-base  text-black label-text">Password</span>
             </label>
             <input
               type="text"
@@ -52,7 +48,7 @@ function Login() {
 
           <Link
             to="/signup"
-            className="text-sm text-blue-300 hover:underline hover:text-white-600 mt-2 inline-block"
+            className="text-sm text-black hover:underline hover:text-white-600 mt-2 inline-block"
           >
             {"Don't"} have an account?
           </Link>

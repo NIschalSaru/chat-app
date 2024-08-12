@@ -33,9 +33,7 @@ const SignUp = () => {
         <form onSubmit={handleOnSubmit}>
           <div>
             <label className="label p-2">
-              <span className="text-base text-blue-300 label-text">
-                Full Name
-              </span>
+              <span className="text-base text-black label-text">Full Name</span>
             </label>
             <input
               type="text"
@@ -50,9 +48,7 @@ const SignUp = () => {
 
           <div>
             <label className="label p-2">
-              <span className="text-base text-blue-300 label-text">
-                Username
-              </span>
+              <span className="text-base text-black label-text">Username</span>
             </label>
             <input
               type="text"
@@ -67,9 +63,7 @@ const SignUp = () => {
 
           <div>
             <label className="label p-2">
-              <span className="text-base text-blue-300 label-text">
-                Password
-              </span>
+              <span className="text-base text-black label-text">Password</span>
             </label>
             <input
               type="text"
@@ -84,7 +78,7 @@ const SignUp = () => {
 
           <div>
             <label className="label p-2">
-              <span className="text-base text-blue-300 label-text">
+              <span className="text-base text-black label-text">
                 Confirm Password
               </span>
             </label>
@@ -105,7 +99,7 @@ const SignUp = () => {
           ></GenderCheck>
           <Link
             to={"/login"}
-            className="text-sm text-blue-300 hover:underline hover:text-white-600 mt-2 inline-block"
+            className="text-sm text-black hover:underline hover:text-white-600 mt-2 inline-block"
           >
             Already have an account?
           </Link>
